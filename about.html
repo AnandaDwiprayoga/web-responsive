@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>STARNEWS</title>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {  margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section { display: block;}
+        body { line-height: 1;}
+        ol, ul { list-style: none;}
+        blockquote, q { quotes: none;}
+        blockquote:before, blockquote:after,
+        q:before, q:after { content: ''; content: none;}
+        table { border-collapse: collapse; border-spacing: 0;}
+
+        body{ margin:0px; font-family: 'Open Sans', sans-serif;}
+        .bg{ width: 1349px; height: 100%;}
+        #container{box-sizing: border-box;width: 100%;margin: 0 auto;background-image: url('../images/paper.jpg');background-size: cover;}
+        #header{width: 100%;height: auto;}
+
+        #logo{width: 60%;height: auto;float: left;}
+        #logo img{position: relative;max-width: 100%;margin: 30px;}
+
+        .sosmed{width: 5%;float: left;margin: 30px 0;height: auto;/* position: relative; *//* top: 40px; *//* right: 150px; */}
+        .sosmed img{width: 50%;height: auto;margin: 10px;}
+        .sosmed a{ text-decoration: none; color: white;}
+
+        .iklan{width: 35%;height: auto;float: left;}
+        .iklan img{position: relative;/* margin: 30px auto; */margin: 30px;max-width: 100%;}
+
+        #menu{width: 100%;height: auto;background-color: #6d6e72;float: left;font-size: 20px;font-weight: bold;/* padding: 30px; */padding: 0 30px;}
+        #menu ul{list-style: none;/* margin: 0 0 0 30px; *//* overflow: hidden; */}
+        #menu li{/* height: 100%; */float:left;}
+        #menu li a{display: inline-block;color:black;padding: 20px 30px;text-decoration: none;}
+        #menu li a:hover{ background-color: #404040;}
+        #menu img{height: 20px;}
+        #menu form{/* float: right; *//* position: relative; *//* bottom: 50px; *//* right: 50px; */padding: 15px 30px;}
+        #menu form input{ width: 250px; height: 30px; background-color: #b2a3a8; border: none; padding: 0 20px;}
+
+        .konten{/* height: 615px; */width: 100%;}
+        /*bagian slide show*/
+        * {box-sizing: border-box;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        .slideshow-container { width: 763px; position: relative; top:100px; left: 100px; margin: auto; float: left;}
+
+        .numbertext { color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
+
+        .dot { position: relative; top:130px; height: 10px; width: 10px; margin: 0 2px; background-color:white; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
+        .active { background-color:#4ab848;}
+
+        .fade { -webkit-animation-name: fade; -webkit-animation-duration: 1.5s; animation-name: fade; animation-duration: 1.5s;}
+        .text-slide{ height: 100px; padding: 30px; color: white; background-color: rgba(118, 118, 118, 0.8); cursor: pointer; position: relative; bottom: 98px;}
+        .text-slide p{ font-size: 20pt;}
+
+        @-webkit-keyframes fade { from {opacity: .4} to {opacity: 1}}
+        @keyframes fade { from {opacity: .4} to {opacity: 1}}
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {.text {font-size: 11px}}
+
+        .button-slide{ width: 260px; height: 75px; background-color: transparent; border:solid #e9ae21 2px; text-align: center; position: relative; left: 540px; bottom:300px; font-size: 25px; color: #e9ae21; cursor: pointer; transition-duration: 0.4s; font-family: 'Homenaje', sans-serif; font-size: 30px;}
+
+        .update{ width: 450px; height: 550px; float: right;}
+        .update-atas{ width: 367px; height: 58px; background-color: black; position: relative; top: 78px; text-align: center; padding: 10px;}
+        .update-atas h1{ font-size: 20pt; font-weight: bold;}
+        .update-atas a{ text-decoration: none; color: white; font-size: 20pt; position: relative;}
+        .fas{ color: red;}
+        .fas:hover{ transition: 0.5s; transform: rotate(90deg);}
+        .update-atas h1{ margin: 0; position: relative; top: 5px; color: white;}
+        .update-bawah{ width: 367px; height: 360px; background-color: black; position: relative; top: 95px;}
+
+        .berita{ padding: 20px 50px; text-align: center; height: 180px;}
+        .berita p{ color:white; font-size: 15pt; margin: 0;}
+        .berita a{ text-decoration: none;}
+
+        .garis{ border-bottom: 5px dashed white;}
+
+        .kategori{ height: 365px; clear: both; margin: 50px 0; font-weight: bold; font-size: 25px;}
+        .kategori-kotak{ float: left; margin: 0 64px;}
+        .kategori-kotak img{ border-top:5px dashed black; padding: 10px 0;}
+        .kategori-kotak h2, .kategori-kotak-tengah h2{ margin: 10px 0;}
+        .kategori-kotak-tengah{ float: left; margin: 0 64px;}
+        .kategori-kotak-tengah img{ border-top:5px dashed black; padding: 10px 0;}
+
+        .berita2{ height: 365px; clear: both; margin: 50px 0; font-weight: bold; font-size: 25px;}
+        .berita2-kotak{ float: left; margin: 0 54px;}
+        .berita2-kotak img{ border-top:5px dashed black; padding: 10px 0;}
+        .berita2-kotak h2{ margin: 10px 0;}
+        .berita2-kotak:hover{ -webkit-transform: scale(1.01); transform: scale(1.01);}
+
+        .kategori-kotak:hover, .kategori-kotak-tengah:hover{ -webkit-transform: scale(1.01); transform: scale(1.01);}
+        .text{ padding: 32px 0; color: white; text-align: center; position: relative; bottom: 90px; background-color: rgba(118, 118, 118, 0.8); cursor: pointer;}
+
+        p.text2{ font-family: 'Times New Roman', Times, serif; margin: 30px 0;}
+        .text p{ font-size: 14pt;}
+        .fas fa-plus{ background-color: red;}
+
+        .about{ width: 90%; margin:0 auto; position: relative; bottom: 50px; height: 100px; border-bottom: 5px dashed black; font-weight: bold;}
+        .strip{ width: 500px; float: left; border-top: 5px dashed black;}
+        .about h2{ float: left; position: relative; bottom: 10px; margin: 0 33px; font-size: 22pt;}
+        .about h2 a{ text-decoration: none; color: black;}
+        .about h3{ clear: both; text-align: center; font-size: 20pt;}
+        .about-text {width: 100%;}
+
+        #footer{clear: both;width: 100%;height: 277px;background-color: #a8a9ad;font-size: 15pt;padding: 5%;}
+        #footer p{ margin: 0px;}
+        .kiri{width: 33.33%;float: left;/* position: relative; *//* top: 50px; *//* left: 96px; *//* margin: 0 70px 0 0; */}
+        .kanan{width: 33.33%;widows: 259px;float: right;/* position: relative; *//* top: 50px; */font-weight: bold;/* margin: 0 100px 0 0; */}
+        .kanan ul{ list-style: none; margin: 0;}
+        .kanan li{ padding: 0 0 8px 0;}
+        .kanan li a{ text-decoration: none; color: black;}
+        .kanan li a:hover{ color:#6d6e72;}
+        .isi {width: 70%;float: right;}
+
+        .konten-container{width: 100%;margin: 0 auto;padding: 0 5%;}
+
+        .indikator{height: 120px;clear: both;border-bottom: 2px dashed black;padding: 40px 0;/* margin: 0 0 20px 0; */}
+        .indikator a{ font-size: 20pt; text-decoration: none; color:black;}
+        a.aktif{ color: rgb(0, 195, 255);}
+
+        .about-kiri{width: 50%;float: left;}
+        .about-text h2{ font-size: 35pt; margin:50px 0;}
+        .about-text p{text-align: left;width: 100%;font-size: 17pt;margin: 0px 0 30px 0;}
+        .about-text p strong{ font-weight: bold;}
+
+        .editorial{/* height: 150px; */margin: 20px 0;}
+        .editorial h2{ font-size: 25pt; font-weight: bold; margin:50px 0;}
+        .editorial p{ font-size: 15pt; margin:10px 0;}
+
+        .managemen{/* height: 225px; */margin: 20px 0;margin-bottom: 135px;}
+        .managemen h2{ font-size: 25pt; font-weight: bold; margin:50px 0;}
+        .managemen p{ font-size: 15pt; margin:10px 0;}
+
+        .about-kanan{width: 50%;text-align: center;float: left;}
+        .about-kanan h2{ padding: 50px 0 20px 0; font-size: 25pt;}
+        .about-kanan h2 strong{ font-weight: bold;}
+
+        .daftar-berita{width: 100%;/* height: auto; */margin: 0 auto;border-top: 2px dashed black;padding: 20px;20px;}
+        .daftar-berita h2{ padding: 50px 0 0 0; font-size: 25pt;}
+        .daftar-berita p{text-align: left;/* width: 100%; *//* float: left; */font-size: 15pt; padding-left: 25px;}
+        .daftar-berita i{float: left;/* padding: 20px 30px; */}
+        .daftar-berita a{ text-decoration: none; color:black;}
+        .mobile-icon {display: none;}
+        #mobileNavbar {display: none;}
+        @media only screen and (max-width: 1196px){ 
+            #menu {position: relative;}
+            div#mobileNavbar ul li {float: none;width: 100%;}
+            div#mobileNavbar {position: absolute;background: #6d6e72;top: 10px;left: 91px;width: 25%;}
+            #menu li a {width: 100%;}
+            #menu ul li a.hide {display: none;}
+            .mobile-icon {display: inline-block;float: left;}
+            .sosmed {padding-left: 10px;}
+            i.fa.fa-bars {font-size: 30px;color: black;padding: 20px 30px;}
+            #menu form {padding: 20px 30px;}
+            #menu li {width: 90%;}
+            #menu form input {width: 100%;}
+        }
+        @media only screen and (max-width: 940px){
+            #menu li {width: 80%;}
+        }
+
+        @media only screen and (max-width: 908px){
+            .indikator a {font-size: 18pt;}
+            .about-text h2 {font-size: 33pt;}
+            .about-text p {font-size: 15pt;}
+            .about-sosmed a img {height: 40px;}
+            .editorial h2, .managemen h2, .about-kanan h2 {font-size: 23pt;}
+            .editorial p, .managemen p, .daftar-berita p, #footer {font-size: 13pt;}
+            .kanan li a , #footer p,#menu li a  {font-size: 11pt;}
+        }
+
+        @media only screen and (max-width: 510px){
+            #logo img { margin: 0}
+            #logo {width: 90%;}
+            .sosmed {width: 10%;padding-left: 0;margin: 0}
+            .sosmed img {margin: 4px;}
+            .iklan {width: 100%;text-align: center;}
+            .iklan img {margin: 0;max-width: 60%}
+            #menu {padding: 0}
+            i.fa.fa-bars {font-size: 20px;padding: 10px}
+            #menu form {padding: 5px;}
+            div#mobileNavbar {top: 37px;left: 0;width: 39%;}
+            #menu li a {padding: 10px 15px;}
+            .about-kiri, .about-kanan,.about-kanan .isi  {width: 100%;}
+            .indikator {height: auto; padding: 25px 0;}
+            .about-text h2 {font-size: 33pt;margin: 25px 0}
+            .about-text p {font-size: 13pt;}
+            .editorial h2 {margin: 0;font-size: 21pt}
+            .managemen {margin:20px 0;}
+            .managemen h2 {margin: 0; font-size: 21pt}
+            .about-kanan h2 {font-size: 21pt}
+            .daftar-berita {padding: 15px;}
+            .daftar-berita p {font-size: 12pt}
+            .about-kanan {margin-bottom: 50px}
+            #footer {height: 228px}
+            #footer .kiri {width: 100%; margin-bottom: 15px}
+            #footer .kanan {position: absolute;right: 0}
+        }
+         @media only screen and (max-width: 390px){
+            #footer {height: 270px}
+            .kanan li a, #footer p, #menu li a {font-size: 10pt}
+            #footer .kiri {width: 60%}
+         }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+            </div>
+            <div class="sosmed">
+                <ul>
+                    <li><a href=""><img src="images/twit.png" alt=""></a></li>
+                    <li><a href=""><img src="images/fb.png" alt=""></a></li>
+                    <li><a href=""><img src="images/insta.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="iklan">
+                <img src="images/iklan.png" alt="">
+            </div>
+            <div id="menu">
+                <a href="#" class="mobile-icon" onclick="slideShow()"> <i class="fa fa-bars"></i></a>
+                <ul>
+                    <li><a href="" class="hide">HOME</a></li>
+                    <li><a href="" class="hide"><img src="images/menuspecial.png" alt=""></a></li>
+                    <li><a href="" class="hide">LIFESTYLE</a></li>
+                    <li><a href="" class="hide">MUSIC</a></li>
+                    <li><a href="" class="hide">UPDATE</a></li>
+                    <li><a href="" class="hide">SPORT</a></li>
+                    <li><form action="">
+                    <input type="text" placeholder="Search...">
+                </form></li>
+                </ul>
+                <div id="mobileNavbar">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">SPECIAL</a></li>
+                        <li><a href="">LIFESTYLE</a></li>
+                        <li><a href="">MUSIC</a></li>
+                        <li><a href="">UPDATE</a></li>
+                        <li><a href="">SPORT</a></li>
+                    </ul>
+                </div>
+                <script>
+                    function slideShow(){
+                        var slide = document.getElementById('mobileNavbar');
+                        if(slide.style.display === "none"){
+                            slide.style.display="block";
+                        }else{
+                            slide.style.display="none";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="konten">
+            <div class="konten-container">
+                <div class="indikator">
+                    <a href="index.html">Home</a> > <a href="about.html" class="aktif">About Us</a>
+                </div>
+                <div class="about-kiri">
+                    <div class="about-text">
+                        <h2>About Us</h2>
+                        <p><strong>STARNEWS!</strong> majalah online yang berdiri tahun 2019 selalu menyuguhkan konten dan aktivitas di bidang musik, pop culture, pengembangan diri, dan gaya hidup. 
+                            Agar lebih akrab lagi dengan generasi muda terkini membahas berita seputar anak muda, biar lebih update dan luas wawasannya. <br><br>pokoknya selalu bisa bikin lo gak kuper deh!</p>
+                    </div>
+                    <div class="about-sosmed">
+                        <a href=""><img src="images/gplus.png" alt="" height="50px"></a>
+                        <a href=""><img src="images/twiter.png" alt="" height="50px"></a>
+                        <a href=""><img src="images/facebook.png" alt="" height="50px"></a>
+                    </div>
+                    <div class="editorial">
+                        <h2>Editorial</h2>
+                        <p>Gahtan Sungkar</p>
+                        <p>Gatot Subroto</p>
+                        <p>Sudirman J</p>
+                    </div>
+                    <div class="managemen">
+                        <h2>Managemen</h2>
+                        <p>Cut N.D</p>
+                        <p>Patimura</p>
+                    </div>
+                </div>
+                <div class="about-kanan">
+                    <div class="isi">
+                            <h2><strong>MOST</strong> READ</h2>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>ternyata pevita pearce suka anak graffiti loh</p></a>
+                        </div>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>7 potret yang lo ga bakal percaya keasliannya</p></a>
+                        </div>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>Camera hp bisa lo andalin buat bikin hasil foto mirip DSLR</p></a>
+                        </div>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>Jangan ngerasa gaul kalo lo belom coba kegiatan ini</p></a>
+                        </div>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>mengenal lebih dekat dengan anak anak graffiti</p></a>
+                        </div>
+                        <div class="daftar-berita">
+                            <a href=""><i class="fas fa-plus"></i><p>Inilah cara lo buat bedain barang asli dan palsu</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+        <div id="footer">
+            <div class="kiri">
+                <p>PT.Kreatif Indonesia</p>
+                <p>Srigunting VII No.4 Manahan Surakarta,</p>
+                <p>Solo Surakarta Jawa Tengah Indonesia</p>
+                <p>Email : GahtanSungkar@gmail.com</p>
+            </div>
+            <div class="kiri">
+                <p>Hak Cipta oleh majalah STARNEWS!</p>
+                <p>Dilarang mengutip / menyalin /</p>
+                <p>mempublikasikan / meng-copy isi dari</p>
+                <p>website tanpa seijin</p>
+                <p>dari PT Kreatif Indonesia</p>
+            </div>
+            <div class="kanan">
+                <ul>
+                    <li><a href="">CONTACT US</a></li>
+                    <li><a href="">ADVERTISE</a></li>
+                    <li><a href="">PRIVACY POLICY</a></li>
+                    <li><a href="">CONTRIBUTE</a></li>
+                    <li><a href="">AGENT PROVOCATEUR</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="">CARREER</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>

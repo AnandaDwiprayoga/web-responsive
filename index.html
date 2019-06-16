@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>STARNEWS</title>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section { display: block;}
+        body { line-height: 1;}
+        ol, ul { list-style: none;}
+        blockquote, q { quotes: none;}
+        blockquote:before, blockquote:after,
+        q:before, q:after { content: ''; content: none;}
+        table { border-collapse: collapse; border-spacing: 0;}
+        
+        body{ margin:0px; font-family: 'Open Sans', sans-serif;}
+        .bg{ width: 1349px; height: 100%;}
+        #container{ width: 1349px; margin: 0 auto; background-image: url('../images/paper.jpg'); background-size: cover;}
+        #header{ width: 100%; height: 260px;}
+
+        #logo{ width: 900px; height: 260px; float: left;}
+        #logo img{ position: relative; margin: 30px;}
+
+        .sosmed{ float: left; position: relative; top: 40px; right: 150px;}
+        .sosmed img{ height: 30px; margin: 10px;}
+        .sosmed a{ text-decoration: none; color: white;}
+
+        .iklan{ width: 384px; height: 260px; float: left;}
+        .iklan img{ position: relative; margin: 30px;}
+
+        #menu{ width: 100%; height: 60px; background-color: #6d6e72; float: left; font-size: 20px; font-weight: bold;}
+        #menu ul{ list-style: none; margin: 0 0 0 30px; padding: 0; overflow: hidden;}
+        #menu li{ float:left;}
+        #menu li a{ display: inline-block; color:black; padding: 20px 30px; text-decoration: none;}
+        #menu li a:hover{ background-color: #404040;}
+        #menu img{ height: 25px;}
+        #menu form{ float: right; position: relative; bottom: 50px; right: 50px;}
+        #menu form input{ width: 250px; height: 30px; background-color: #b2a3a8; border: none; padding: 0 20px;}
+
+        .konten{ height: 615px;}
+        /*bagian slide show*/
+        * {box-sizing: border-box;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        .slideshow-container { width: 763px; position: relative; top:100px; left: 100px; margin: auto; float: left;}
+
+        .numbertext { color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
+
+        .dot { position: relative; top:130px; height: 10px; width: 10px; margin: 0 2px; background-color:white; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
+        .active { background-color:#4ab848;}
+
+        .fade { -webkit-animation-name: fade; -webkit-animation-duration: 1.5s; animation-name: fade; animation-duration: 1.5s;}
+        .text-slide{ height: 100px; padding: 30px; color: white; background-color: rgba(118, 118, 118, 0.8); cursor: pointer; position: relative; bottom: 98px;}
+        .text-slide p{ font-size: 20pt;}
+
+        @-webkit-keyframes fade { from {opacity: .4} to {opacity: 1}}
+        @keyframes fade { from {opacity: .4} to {opacity: 1}}
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {.text {font-size: 11px}}
+
+        .button-slide{ width: 260px; height: 75px; background-color: transparent; border:solid #e9ae21 2px; text-align: center; position: relative; left: 540px; bottom:300px; font-size: 25px; color: #e9ae21; cursor: pointer; transition-duration: 0.4s; font-family: 'Homenaje', sans-serif; font-size: 30px;}
+
+        .update{ width: 450px; height: 550px; float: right;}
+        .update-atas{ width: 367px; height: 58px; background-color: black; position: relative; top: 78px; text-align: center; padding: 10px;}
+        .update-atas h1{ font-size: 20pt; font-weight: bold;}
+        .update-atas a{ text-decoration: none; color: white; font-size: 20pt; position: relative;}
+        .fas{ color: red;}
+        .fas:hover{ transition: 0.5s; transform: rotate(90deg);}
+        .update-atas h1{ margin: 0; position: relative; top: 5px; color: white;}
+        .update-bawah{ width: 367px; height: 360px; background-color: black; position: relative; top: 95px;}
+
+        .berita{ padding: 20px 50px; text-align: center; height: 180px;}
+        .berita p{ color:white; font-size: 15pt; margin: 0;}
+        .berita a{ text-decoration: none;}
+
+        .garis{ border-bottom: 5px dashed white;}
+
+        .kategori{ height: 365px; clear: both; margin: 50px 0; font-weight: bold; font-size: 25px;}
+        .kategori-kotak{ float: left; margin: 0 64px;}
+        .kategori-kotak img{ border-top:5px dashed black; padding: 10px 0;}
+        .kategori-kotak h2, .kategori-kotak-tengah h2{ margin: 10px 0;}
+        .kategori-kotak-tengah{ float: left; margin: 0 64px;}
+        .kategori-kotak-tengah img{ border-top:5px dashed black; padding: 10px 0;}
+
+        .berita2{ height: 365px; clear: both; margin: 50px 0; font-weight: bold; font-size: 25px;}
+        .berita2-kotak{ float: left; margin: 0 54px;}
+        .berita2-kotak img{ border-top:5px dashed black; padding: 10px 0;}
+        .berita2-kotak h2{ margin: 10px 0;}
+        .berita2-kotak:hover{ -webkit-transform: scale(1.01); transform: scale(1.01);}
+
+        .kategori-kotak:hover, .kategori-kotak-tengah:hover{ -webkit-transform: scale(1.01); transform: scale(1.01);}
+        .text{ padding: 32px 0; color: white; text-align: center; position: relative; bottom: 90px; background-color: rgba(118, 118, 118, 0.8); cursor: pointer;}
+
+        p.text2{ font-family: 'Times New Roman', Times, serif; margin: 30px 0;}
+        .text p{ font-size: 14pt;}
+        .fas fa-plus{ background-color: red;}
+
+        .about{ width: 90%; margin:0 auto; position: relative; bottom: 50px; height: 100px; border-bottom: 5px dashed black; font-weight: bold;}
+        .strip{ width: 500px; float: left; border-top: 5px dashed black;}
+        .about h2{ float: left; position: relative; bottom: 10px; margin: 0 33px; font-size: 22pt;}
+        .about h2 a{ text-decoration: none; color: black;}
+        .about h3{ clear: both; text-align: center; font-size: 20pt;}
+
+        #footer{ clear: both; width: 1349px; height: 277px; background-color: #a8a9ad; font-size: 15pt;}
+        #footer p{ margin: 0px;}
+        .kiri{ width: 400px; float: left; position: relative; top: 50px; left: 96px; margin: 0 70px 0 0;}
+        .kanan{ widows: 259px; float: right; position: relative; top: 50px; font-weight: bold; margin: 0 100px 0 0;}
+        .kanan ul{ list-style: none; margin: 0;}
+        .kanan li{ padding: 0 0 8px 0;}
+        .kanan li a{ text-decoration: none; color: black;}
+        .kanan li a:hover{ color:#6d6e72;}
+
+        .konten-container{ width: 1215px; margin: 0 auto;}
+
+        .indikator{ height: 120px; clear: both; border-bottom: 2px dashed black; padding: 40px 0; margin: 0 0 20px 0;}
+        .indikator a{ font-size: 20pt; text-decoration: none; color:black;}
+        a.aktif{ color: rgb(0, 195, 255);}
+
+        .about-kiri{ width: 700px; float: left;}
+        .about-text h2{ font-size: 35pt; margin:50px 0;}
+        .about-text p{ text-align: left; width: 620px; font-size: 17pt; margin: 10px 0 30px 0;}
+        .about-text p strong{ font-weight: bold;}
+
+        .editorial{ height: 150px; margin: 20px 0;}
+        .editorial h2{ font-size: 25pt; font-weight: bold; margin:50px 0;}
+        .editorial p{ font-size: 15pt; margin:10px 0;}
+
+        .managemen{ height: 225px; margin: 20px 0;}
+        .managemen h2{ font-size: 25pt; font-weight: bold; margin:50px 0;}
+        .managemen p{ font-size: 15pt; margin:10px 0;}
+
+        .about-kanan{ width: 515px; text-align: center; float: left;}
+        .about-kanan h2{ padding: 50px 0 20px 0; font-size: 25pt;}
+        .about-kanan h2 strong{ font-weight: bold;}
+
+        .daftar-berita{ width:470px; height:100px; margin: 0 auto; border-top: 2px dashed black; padding: 20px;}
+        .daftar-berita h2{ padding: 50px 0 0 0; font-size: 25pt;}
+        .daftar-berita p{ text-align: left; width: 350px; float: left; font-size: 15pt;}
+        .daftar-berita i{ float: left; padding: 20px 30px;}
+        .daftar-berita a{ text-decoration: none; color:black;}
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="sosmed">
+                <ul>
+                    <li><a href=""><img src="images/twit.png" alt=""></a></li>
+                    <li><a href=""><img src="images/fb.png" alt=""></a></li>
+                    <li><a href=""><img src="images/insta.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="iklan">
+                <img src="images/iklan.png" alt="">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href=""><img src="images/menuspecial.png" alt=""></a></li>
+                    <li><a href="">LIFESTYLE</a></li>
+                    <li><a href="">MUSIC</a></li>
+                    <li><a href="">UPDATE</a></li>
+                    <li><a href="">SPORT</a></li>
+                </ul>
+                <form action="">
+                    <input type="text" placeholder="Search...">
+                </form>
+
+            </div>
+        </div>
+        <div class="konten">
+            <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="images/slide1.jpg" style="width:100%">
+                        <div class="text-slide">
+                            <p>Duta Sheila on 7 lebih suka tampil di awal acara</p>
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <img src="images/slide2.jpg" style="width:100%">
+                        <div class="text-slide">
+                            <p>Kunto Aji berhasil memberikan sensasi baru di permusikan</p>
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <img src="images/slide3.jpg" style="width:100%">
+                        <div class="text-slide">
+                            <p>Raisa kembali manggung setelah vakum melahirkan</p>
+                        </div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/slide4.jpg" style="width:100%">
+                        <div class="text-slide">
+                            <p>Tulus sukses membawakan lagu barunya</p>
+                        </div>
+                    </div>
+            </div>
+            <div>
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+            <div class="update">
+                <div class="update-atas">
+                    <h1>RECENT UPDATES <a href=""><i class="fas fa-plus"></i></a></h1>
+                </div>
+                <div class="update-bawah">
+                    <div class="berita">
+                        <a href="">
+                            <p>Kaesang berbagi cerita dibalik kesuksesan bisnis jualan pisang</p>
+                            <p class="text2">UPDATE ON 03.03.2019</p>
+                        </a>
+                    </div>
+                    <div class="garis"></div>
+                    <div class="berita">
+                        <a href="">
+                            <p>Posting foto terlalu vulgar, Anya geraldine dipanggin KPAI</p>
+                            <p class="text2">UPDATE ON 02.03.2019</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="berita2">
+            <div class="berita2-kotak">
+                <h2>Film <i class="fas fa-plus"></i></h2>
+                <img src="images/1-01.png" alt="" width="340px">
+            </div>
+            <div class="berita2-kotak">
+                <h2>Sport <i class="fas fa-plus"></i></h2>
+                <img src="images/2-01.png" alt="" width="340px">
+            </div>
+            <div class="berita2-kotak">
+                <h2>Music <i class="fas fa-plus"></i></h2>
+                <img src="images/3-01-01.png" alt="" width="340px">
+            </div>
+        </div>
+        <div class="kategori">
+                <div class="kategori-kotak">
+                    <h2>Lifestyle <i class="fas fa-plus"></i></h2>
+                    <img src="images/iklan1.jpg" alt="">
+                    <div class="text">
+                        <p>Jangan pernah kesini kalo lo penakut</p>
+                    </div>
+                </div>
+                <div class="kategori-kotak-tengah">
+                    <h2>Art <i class="fas fa-plus"></i></h2>
+                    <img src="images/iklan2.jpg" alt="">
+                    <div class="text">
+                        <p>Tempat pensil seharga motor</p>
+                    </div>
+                </div>
+                <div class="kategori-kotak">
+                    <h2>Video <i class="fas fa-plus"></i></h2>
+                    <img src="images/iklan3.jpg" alt="">
+                    <div class="text">
+                        <p>Nostalgia sama malam minggu miko!</p>
+                    </div>
+                </div>
+        </div>
+        <div class="about">
+            <div class="strip"></div>
+            <h2><a href="about.html">ABOUT US</a></h2>
+            <div class="strip"></div>
+            <h3>STARTNEWS! Membahas berita berita seputar anak muda, agar lebih update dan luas wawasannya</h3>
+        </div>
+        <div id="footer">
+            <div class="kiri">
+                <p>PT.Kreatif Indonesia</p>
+                <p>Srigunting VII No.4 Manahan Surakarta,</p>
+                <p>Solo Surakarta Jawa Tengah Indonesia</p>
+                <p>Email : GahtanSungkar@gmail.com</p>
+            </div>
+            <div class="kiri">
+                <p>Hak Cipta oleh majalah STARNEWS!</p>
+                <p>Dilarang mengutip / menyalin /</p>
+                <p>mempublikasikan / meng-copy isi dari</p>
+                <p>website tanpa seijin</p>
+                <p>dari PT Kreatif Indonesia</p>
+            </div>
+            <div class="kanan">
+                <ul>
+                    <li><a href="">CONTACT US</a></li>
+                    <li><a href="">ADVERTISE</a></li>
+                    <li><a href="">PRIVACY POLICY</a></li>
+                    <li><a href="">CONTRIBUTE</a></li>
+                    <li><a href="">AGENT PROVOCATEUR</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="">CARREER</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
